@@ -1,6 +1,6 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import queryString from "query-string";
-import { useCallback } from "react";
+import { Suspense, useCallback } from "react";
 import { IconType } from "react-icons";
 
 interface CategoryProps {
@@ -36,6 +36,7 @@ const Category: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) => {
     }
   }, [label,params,router]);
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div
       onClick={handleClick}
       className={`flex items-center justify-center text-center gap-1 p-2 border-b-2 hover:text-slate-800 transition cursor-pointer ${
@@ -47,6 +48,7 @@ const Category: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) => {
       <Icon size={20} />
       <div className="font-medium text-sm">{label}</div>
     </div>
+    </Suspense>
   );
 };
 

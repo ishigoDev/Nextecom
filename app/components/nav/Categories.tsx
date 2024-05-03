@@ -3,6 +3,7 @@ import { categories } from "@/utils/Categories";
 import Container from "../Container";
 import Category from "./Category";
 import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const Categories = () => {
   const params = useSearchParams();
@@ -13,6 +14,7 @@ const Categories = () => {
 
   if(!isMainPage) return null;
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="bg-white">
       <Container>
         <div className="pt-4 flex flex-row items-center justify-between overflow-x-auto">
@@ -27,6 +29,7 @@ const Categories = () => {
         </div>
       </Container>
     </div>
+    </Suspense>
   );
 };
 
