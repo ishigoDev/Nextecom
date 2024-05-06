@@ -6,7 +6,6 @@ export async function getSession(){
 }
 
 export async function getCurrentUser(){
-    try{
         const session = await getSession();
         if(!session?.user?.email){
             return null;
@@ -27,8 +26,5 @@ export async function getCurrentUser(){
             updatedAt: currentUser.updatedAt.toISOString(),
             emailVerified: currentUser.emailVerified?.toString() || null
         }
-    }catch(error:any){
-        console.log(error);
-        return null;
-    }   
+
 }
