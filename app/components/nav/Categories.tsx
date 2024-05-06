@@ -29,7 +29,7 @@ const Categories = () => {
         </div>
       </Container>
     </div>
-    </Suspense>
+    </Suspense> 
   );
 };
 

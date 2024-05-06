@@ -1,3 +1,4 @@
+export const revalidate = 0
 import getProducts from "@/actions/getProducts";
 import Summary from "./Summary";
 import getOrders from "@/actions/getOrders";

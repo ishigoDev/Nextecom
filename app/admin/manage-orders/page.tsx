@@ -1,3 +1,4 @@
+export const revalidate = 0
 import Container from "@/app/components/Container";
 import ManageOrdersClient from "./ManageOrdersClient";
 import { getCurrentUser } from "@/actions/getCurrentUser";
